@@ -24,7 +24,7 @@
 - (void) initChipmunk;
 
 // as cancelled and up do the same thing
-- (void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
+- (BOOL)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void) rumble;
 - (void) playerJustCollidedAtHighSpeed;
 

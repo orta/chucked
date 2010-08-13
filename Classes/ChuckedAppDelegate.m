@@ -74,7 +74,6 @@ void * game;
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   glHint(GL_LINE_SMOOTH_HINT, GL_DONT_CARE);
   
-  NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
   return self;
 }
 
@@ -130,7 +129,7 @@ void * game;
 
 
 
-- (void)ccTouchesMoved:(NSSet*)touches withEvent:(UIEvent*)event{  
+- (BOOL) ccTouchesMoved:(NSSet*)touches withEvent:(UIEvent*)event{  
   UITouch *myTouch =  [touches anyObject];
   CGPoint location = [myTouch locationInView: [myTouch view]];
   location = [[Director sharedDirector] convertCoordinate: location];
@@ -143,22 +142,27 @@ void * game;
     //TODO: look for any member of player and set boy
 
   }
+  return YES;
 }
 
-- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (BOOL)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   UITouch *myTouch =  [touches anyObject];
   CGPoint location = [myTouch locationInView: [myTouch view]];
   location = [[Director sharedDirector] convertCoordinate: location];
   mouse = cpMouseNew(space);
   cpMouseMove(mouse, cpv(location.x, location.y));
   cpMouseGrab(mouse, 0);
+  return YES;
 }
 
-- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (BOOL)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
   [self ccTouchesCancelled:touches withEvent:event];
+  return YES;
 }
-- (void)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+
+- (BOOL)ccTouchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
   cpMouseDestroy(mouse);
+  return YES;
 }
 
 
