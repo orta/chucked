@@ -256,7 +256,7 @@ void pushAwayFromPlayer(void *ptr, void *player_body){
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	[window setUserInteractionEnabled:YES];
 	//[window setMultipleTouchEnabled:YES];
-
+    window.rootViewController = [[UIViewController alloc] init];
   
 	//[[Director sharedDirector] setLandscape: YES];
 	[[Director sharedDirector] setDisplayFPS:YES];

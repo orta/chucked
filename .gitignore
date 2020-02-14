@@ -16,3 +16,7 @@ build/*
 # osx noise
 .DS_Store
 profile
+chucked too.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+chucked too.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+chucked too.xcodeproj/project.xcworkspace/xcuserdata/ekarkan.xcuserdatad/UserInterfaceState.xcuserstate
+chucked too.xcodeproj/xcuserdata/ekarkan.xcuserdatad/xcschemes/xcschememanagement.plist
